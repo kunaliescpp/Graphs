@@ -38,7 +38,6 @@ Constraints:
 class Solution {
     public:
     void dfs(int V, int source, bool visited[], vector<int> adj[], vector<int>& v){
-    
         visited[source] = true;
         v.push_back(source);
         for(int j : adj[source]){
@@ -49,9 +48,7 @@ class Solution {
 	vector<int>dfsOfGraph(int V, vector<int> adj[]){
 	    
 	    bool visited[V];
-	    for(int i = 0; i < V; i++){
-	        visited[i] = false;
-	    }
+	    for(int i = 0; i < V; i++) visited[i] = false;
 	    
 	    vector<int>v ;
 	    dfs(V, 0, visited, adj, v);
