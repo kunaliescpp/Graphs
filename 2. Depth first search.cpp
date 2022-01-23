@@ -45,16 +45,16 @@ class Solution {
         }
     }
     
-	vector<int>dfsOfGraph(int V, vector<int> adj[]){
+    vector<int>dfsOfGraph(int V, vector<int> adj[]){
 	    
-	    bool visited[V];
-	    for(int i = 0; i < V; i++) visited[i] = false;
+	 bool visited[V];
+	 for(int i = 0; i < V; i++) visited[i] = false;
 	    
-	    vector<int>v ;
-	    dfs(V, 0, visited, adj, v);
+	 vector<int>v ;
+	 dfs(V, 0, visited, adj, v);
 	    
     return v;
-	}
+   }
 };
 
 
