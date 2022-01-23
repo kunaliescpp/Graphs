@@ -31,35 +31,33 @@ Constraints:
 class Solution{
   public:
         
-    //Time complexity: O(V+E)
-    //Space complexity: 
-    
-    //BFS find paths from source to its 1 edge away vertex (i.e. shortest path)
-	vector<int>bfsOfGraph(int V, vector<int> adj[]){
-	    
-	    vector<bool> isVisited(V, false);
-	   
-	    vector<int>v;
-	  
-	    int src = 0;
-        queue<int>q;
-        q.push(src);
-        isVisited[src] = true;
-        for(int i = 0; i < V; i++){                   // visiting n nodees = O(V)
-            while(!q.empty()){
-                int node = q.front(); q.pop();
-                v.push_back(node);
-                
-                for(int j : adj[node]){               // adj nodes travel = O(E)
-                    if(isVisited[j] == false){
-                        q.push(j);
-                        isVisited[j] = true;
-                    }
-                }
-            }
-        }
-	return v;
+//Time complexity: O(V+E)
+
+//BFS find paths from source to its 1 edge away vertex (i.e. shortest path)
+    vector<int>bfsOfGraph(int V, vector<int> adj[]){
+
+  	vector<bool> isVisited(V, false);
+	vector<int>v;
+
+	queue<int>q;
+	int src = 0;
+	q.push(src);
+	isVisited[src] = true;
+	for(int i = 0; i < V; i++){                   // visiting n nodees = O(V)
+	    while(!q.empty()){
+		int node = q.front(); q.pop();
+		v.push_back(node);
+
+		for(int j : adj[node]){               // adj nodes travel = O(E)
+		    if(isVisited[j] == false){
+			q.push(j);
+			isVisited[j] = true;
+		    }
+		}
+	    } // queue is empty
 	}
+    return v;
+    }
 };
 
 
