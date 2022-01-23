@@ -45,7 +45,7 @@ public:
         
         int n = edges.size();
 
-    	  vector<int> parent(n+1, 0);
+    	    vector<int> parent(n+1, 0);
         vector<int> rank(n+1);
         for(int i = 1; i < n; i++){
            parent[i] = i;
