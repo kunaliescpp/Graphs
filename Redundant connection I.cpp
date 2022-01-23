@@ -48,8 +48,8 @@ public:
     	  vector<int> parent(n+1, 0);
         vector<int> rank(n+1);
         for(int i = 1; i < n; i++){
-        parent[i] = i;
-             rank[i] = 1;
+           parent[i] = i;
+           rank[i] = 1;
         }
         
         for(auto x : edges){
