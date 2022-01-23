@@ -47,10 +47,9 @@ class Solution {
         }
     }
 
-	int findMotherVertex(int V, vector<int>adj[]){
-	    
-	    //check if there is a path from 1 node to all node
-	    stack<int> stk;
+    int findMotherVertex(int V, vector<int>adj[]){
+    	//check if there is a path from 1 node to all node
+	stack<int> stk;
         vector<bool> visited(V);
         for(int i = 0; i < V; i++){
             if(visited[i] == false){
@@ -59,16 +58,16 @@ class Solution {
             }
         }
 	    
-	    fill(visited.begin(), visited.end(), false);
-	    //only stk.top() have the capacity to be a mother vertex
-	    check_candidate(adj, stk.top(), visited);
+        fill(visited.begin(), visited.end(), false);
+        //only stk.top() have the capacity to be a mother vertex
+        check_candidate(adj, stk.top(), visited);
 	    
-	    for(int i = 0; i < V; i++){
-	        if(visited[i] == false) return -1;
-	    }
-	   
-	return stk.top();  
+	for(int i = 0; i < V; i++){
+	    if(visited[i] == false) return -1;
 	}
+	   
+     return stk.top();  
+     }
 };
 
 
