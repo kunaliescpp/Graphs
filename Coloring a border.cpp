@@ -74,4 +74,5 @@ public:
 };
 
 
-//hint ->https://leetcode.com/problems/coloring-a-border/discuss/791470/C%2B%2B-or-Solution-using-DFS-or-Faster-than-99.39-or-With-Explanation 
+
+//Hint = https://leetcode.com/problems/coloring-a-border/discuss/791470/C%2B%2B-or-Solution-using-DFS-or-Faster-than-99.39-or-With-Explanation 
