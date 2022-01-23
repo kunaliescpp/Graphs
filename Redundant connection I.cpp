@@ -45,10 +45,10 @@ public:
         
         int n = edges.size();
 
-    	vector<int> parent(n+1, 0);
+    	   vector<int> parent(n+1, 0);
         vector<int> rank(n+1);
         for(int i = 1; i < n; i++){
-        	parent[i] = i;
+        	   parent[i] = i;
             rank[i] = 1;
         }
         
@@ -57,20 +57,14 @@ public:
             int p2 = findpar(x[1], parent);
             
             if(p1 != p2){
-                
-                if(rank[p1] < rank[p2]){
-                    parent[p2] = p1;
-                }
-                else if(rank[p1] > rank[p2]){
-                    parent[p1] = p2;
-                }
+                if(rank[p1] < rank[p2]) parent[p2] = p1;
+                else if(rank[p1] > rank[p2]) parent[p1] = p2;
                 else{
                     parent[p2] = p1;
                     rank[p1]++;
                 }
-            } else{
-                return x;
-            } 
+            } else return x;
+            
         }
     return {};
     }
