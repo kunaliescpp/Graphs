@@ -1,9 +1,13 @@
+/* Problem Link: https://www.geeksforgeeks.org/strongly-connected-components/?ref=lbp
+
+Given a directed graph, find out whether the graph is strongly connected or not. A directed graph is strongly connected 
+if there is a path between any two pair of vertices.
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
-//topological sorting
-void dfs(int node, stack<int> &st, vector<int> &vis, vector<int> adj[]) {
-    
+void dfs(int node, stack<int> &st, vector<int> &vis, vector<int> adj[]){
     vis[node] = 1; 
     for(auto v: adj[node]) { 
         if(vis[v] == 0) dfs(x, st, vis, adj); 
@@ -12,7 +16,6 @@ void dfs(int node, stack<int> &st, vector<int> &vis, vector<int> adj[]) {
 }
 
 void revDfs(int node, vector<int> &vis, vector<int> transpose[]){
-
    cout << node << " ";
    vis[node] = 1;
    for(auto v : transpose[node]){                                   
@@ -22,8 +25,8 @@ void revDfs(int node, vector<int> &vis, vector<int> transpose[]){
 
 int main(){
 
-   int n, e;
-   cin >> n >> e;
+   int n, cin >> n;
+   int e, cin >> e;
    
    vector<int> adj[n];
    for(int i = 0; i < e; i++){
