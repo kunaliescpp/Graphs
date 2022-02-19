@@ -3,30 +3,28 @@
 Given a directed graph, find out whether the graph is strongly connected or not. A directed graph is strongly connected 
 if there is a path between any two pair of vertices.
 */
-
 #include<bits/stdc++.h>
 using namespace std;
 
-void dfs(int node, stack<int> &st, vector<int> &vis, vector<int> adj[]){
+void dfs(int node, stack<int> &stk, vector<int> &vis, vector<int> adj[]){
     vis[node] = 1; 
-    for(auto v: adj[node]) { 
-        if(vis[v] == 0) dfs(x, st, vis, adj); 
+    for(auto x: adj[node]) { 
+        if(vis[x] == 0) dfs(x, stk, vis, adj); 
     } 
-    st.push(node); 
+    stk.push(node); 
 }
 
 void revDfs(int node, vector<int> &vis, vector<int> transpose[]){
    cout << node << " ";
    vis[node] = 1;
-   for(auto v : transpose[node]){                                   
-      if(vis[v] == 0) revDfs(x, vis, transpose);                  
+   for(auto x : transpose[node]){                                   
+      if(vis[x] == 0) revDfs(x, vis, transpose);                  
    }
 }
 
 int main(){
-
-   int n, cin >> n;
-   int e, cin >> e;
+   int n; cin >> n;
+   int e; cin >> e;
    
    vector<int> adj[n];
    for(int i = 0; i < e; i++){
@@ -39,7 +37,7 @@ int main(){
    vector<int> vis(n, 0);
    stack<int> stk;
    for(int i = 0; i < n; i++){
-      if(vis[i] == 0) dfs(i, st, vis, adj);
+      if(vis[i] == 0) dfs(i, stk, vis, adj);
    }
 
   // step 2-> tranpose the adjacency list
