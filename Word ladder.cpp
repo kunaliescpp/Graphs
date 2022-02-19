@@ -48,11 +48,9 @@ public:
         queue<string> q;
         q.push(beginWord);
         int steps = 1;
-        while(!q.empty()){
-            
+        while(!q.empty()){ 
             int k = q.size();
             while(k--){
-                
                 string f = q.front(); q.pop();
                 if(f == endWord) return steps;
 
